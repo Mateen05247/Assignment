@@ -1,0 +1,64 @@
+<pre>value:{{contactForm.value|json}}</pre>
+<pre>valid:{{contactForm.valid}}</pre>
+<pre>touched:{{contactForm.touched}}</pre>
+<pre>submitted:{{contactForm.submitted}}</pre>
+<pre>value:{{fname.value|json}}</pre>
+<pre>valid:{{fname.valid}}</pre>
+<pre>invalid:{{fname.invalid}}</pre>
+<pre>touched:{{fname.touched}}</pre>
+<form #contactForm="ngForm" (ngSubmit)="onsubmit(contactForm)">
+    <p>
+        <label for="firstname">firstname</label>
+        <input type="text" name="fname" #fname="ngModel" ngModel>
+    </p>
+    <p>
+        <label for="firstname">firstname</label>
+         <input type="text" id="firstname" name="firstname" ngModel>
+    </p>
+    <p>
+        <label for="lastname">lastname</label>
+         <input type="text" id="lastname" name="lastname"ngModel>
+    </p>
+    <p>
+        <label for="email">email</label>
+         <input type="text" id="email" name="email"ngModel>
+    </p>
+    <p>
+        <label for="gender">gender</label>
+         <input type="radio" value="male" id="gender" name="gender"ngModel>male
+         <input type="radio" value="female" id="gender" name="gender"ngModel>female
+        
+    </p>
+    <p>
+        <label for="ismarried">married</label>
+         <input type="checkbox" id="ismarried" name="ismarried"ngModel>
+    </p>
+    <p>
+        <label for="country">country</label>
+         <select name="country" id="country">
+             <option selected="" value=""></option>
+             <option [ngValue]="c.id" *ngFor="let c of countryList">
+                 {{c.name}}
+             </option>
+         </select>
+    </p>
+    <div ngModelGroup="adress">
+        <p>
+           <label for="city">city</label>
+           <input type="text" name="city"ngModel>
+        </p>
+        <p>
+           <label for="street">street</label>
+           <input type="text" name="street"ngModel>
+        </p>
+        <p>
+           <label for="pin code">pin code</label>
+           <input type="text" name="pincode"ngModel>
+        </p>
+    </div>
+    <p>
+        <button type="submit">submit</button>
+    </p>
+     
+</form>
+

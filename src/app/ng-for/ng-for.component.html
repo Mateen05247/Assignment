@@ -1,0 +1,12 @@
+   <ul> 
+        <li *ngFor ="let Movie of movies">
+            <td>
+      {{Movie.title}}-{{Movie.cast }}
+    </td>
+    <ul>
+        <li *ngFor="let cast of casting">
+            {{cast.experience}}{{cast.reviews}}
+        </li>
+    </ul>
+ </li>
+    </ul>
